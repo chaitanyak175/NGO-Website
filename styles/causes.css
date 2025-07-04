@@ -1,0 +1,390 @@
+/* Define CSS variables */
+:root {
+  --primary-color: #e63946;
+  --primary-hover-color: #c02634;
+  --secondary-color: #777;
+  --background-color: #f9f9f9;
+  --card-background: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --animation-timing: 0.3s ease-in-out;
+  --input-background: #f9f9f9;
+  --input-hover-background: #ffe6f0;
+}
+
+body.dark-mode{
+  --background-color:#191919;
+  --card-background:#212121;
+  --primary-background:#121212;
+  --input-background:#000000;
+  --text-color:#FFFFFF;
+  --text-muted:#DDDDDD;
+}
+
+
+/*************************************/
+/************ GLOBAL CSS *************/
+/*************************************/
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: #333;
+}
+
+.hero {
+  margin-top: 15vh !important;
+}
+
+/*************************************/
+/********** CAUSES SECTION ***********/
+/*************************************/
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  overflow: hidden;
+  transition: transform var(--animation-timing), box-shadow var(--animation-timing);
+}
+
+.card:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 12px rgba(9, 9, 9, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+}
+  
+.card-content .category {
+  display: inline-block;
+  padding: 5px 10px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.card-content .category{
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 12px;
+  background-color: #ed3939;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.card-content .category.education {
+  background: #f77f00;
+}
+
+.card-content .category.education {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 12px;
+  background-color: #ed3939;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-content .category.shelter {
+  background: var(--primary-color);
+}
+
+.card-content .category.shelter{
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 12px;
+  background-color: #ed3939;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-content h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  position: relative;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.5s ease-in-out;
+  background: linear-gradient(to right, #ff6b6b, #ff8e53);
+}
+
+.progress-bar span.education {
+  display: block;
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.5s ease-in-out;
+  background: linear-gradient(to right, #ff6b6b, #ff8e53);
+}
+
+.progress-bar span.shelter {
+  display: block;
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.5s ease-in-out;
+  background: linear-gradient(to right, #ff6b6b, #ff8e53);
+}
+
+.load-more {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.load-more button {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--animation-timing);
+}
+
+.load-more button:hover {
+  -webkit-background: var(--primary-hover-color);
+  background: var(--primary-hover-color);
+  box-shadow: 0 4px 8px #000;
+  font-weight: bold;
+}
+
+/*************************************/
+/************ NEWSLETTER *************/
+/*************************************/
+.newsletter {
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.newsletter p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background var(--animation-timing);
+}
+
+.newsletter button:hover {
+  background: var(--primary-hover-color);
+}
+
+/*************************************/
+/************** FOOTER ***************/
+/*************************************/
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer ul,
+.footer a {
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #ccc;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a:hover {
+  color: var(--card-background);
+}
+
+.footer-socials a {
+  margin-right: 10px;
+  color: #ccc;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: var(--card-background);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Media Queries for Small devices (phones) */
+@media (max-width: 480px) {
+
+  /*************************************/
+  /********** CAUSES SECTION ***********/
+  /*************************************/
+  .container {
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  /*************************************/
+  /************ NEWSLETTER *************/
+  /*************************************/
+  .newsletter {
+    padding: 20px 5px;
+  }
+
+  .newsletter input {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .newsletter button {
+    padding: 8px 16px;
+  }
+}
+
+.dark-mode .container h1,.dark-mode .card-content h3{
+  color: var(--text-color);
+}
+
+.dark-mode .card,.dark-mode .newsletter{
+  background-color: var(--card-background);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .newsletter p,.dark-mode .container p, .dark-mode .card-content p{
+  color: var(--text-muted);
+}
+
+.dark-mode .newsletter input{
+  background-color:var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--text-muted);
+}

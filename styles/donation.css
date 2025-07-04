@@ -1,0 +1,388 @@
+/*************************************/
+/************ GLOBAL CSS *************/
+/*************************************/
+:root {
+  --primary-color: #e63946;
+  --primary-hover-color: #d1283b;
+  --secondary-color: #555;
+  --background-color: #f7f8fa;
+  --card-background: #fff;
+  --input-background: #ffe6f0;
+  --input-hover-background: #ffd9e8;
+  --card-shadow: rgba(0, 0, 0, 0.15);
+  --animation-timing: 0.3s ease-in-out;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--secondary-color); /* Set default text color */
+}
+
+body.dark-mode{
+  --background-color:#191919;
+  --card-background:#212121;
+  --primary-background:#121212;
+  --input-background:#000000;
+  --text-color:#FFFFFF;
+  --text-muted:#DDDDDD;
+  --input-hover-border:#DDDDDD
+}
+
+.hero {
+  margin-top: 15vh !important;
+}
+
+/*************************************/
+/*********** DONATION FORM ***********/
+/*************************************/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.donation-form {
+  background: var(--card-background);
+  border-radius: 8px;
+  padding: 20px;
+  flex: 2;
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.donation-form h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--primary-color); /* Updated to primary color */
+}
+
+.donation-form .form-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.donation-form input,
+.donation-form textarea,
+.donation-form select {
+  width: calc(50% - 10px);
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--input-background);
+  transition: background-color var(--animation-timing), box-shadow var(--animation-timing);
+}
+
+.donation-form input:hover,
+.donation-form textarea:hover {
+  background-color: var(--input-hover-background);
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+}
+
+.donation-form input.full-width,
+.donation-form textarea {
+  width: 100%;
+}
+
+.donation-form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.donation-form .payment-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.donation-form .payment-options img {
+  width: 80px;
+  height: auto;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.donation-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color var(--animation-timing);
+}
+
+.donation-form button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.donate-now-heading {
+  font-size: 3.5rem; /* Larger font size */
+  text-align: center;
+  margin-top: 120px; /* Increased top margin */
+  font-weight: bold;
+  color: black; /* Default text color */
+  text-transform: uppercase; /* Make text uppercase */
+  letter-spacing: 2px; /* Add spacing between letters */
+  padding-bottom: 10px; /* Add spacing below text */
+}
+
+.donate-now-heading span {
+  color: var(--primary-color); /* Red color for "Donations" */
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.sidebar .card {
+  background: var(--card-background);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+.sidebar .card:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar .card ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar .card ul li {
+  margin-bottom: 8px;
+  color: var(--secondary-color); /* Ensure consistent text color */
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .card ul li img {
+  width: 70px;
+  height: 70px;
+  /* border-radius: 50%; */
+  margin-right: 10px;
+}
+
+.sidebar .project-organizer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--secondary-color); /* Ensure consistent text color */
+}
+
+.sidebar .project-organizer strong {
+  display: block;
+  color: var(--primary-color); /* Updated to primary color */
+}
+
+.progress-bar {
+  background: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar div {
+  width: 85%;
+  background: var(--primary-color);
+}
+
+/*************************************/
+/*************** FOOTER **************/
+/*************************************/
+.footer {
+  background-color: var(--card-background);
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+.footer input:hover {
+  background-color: var(--input-background);
+}
+
+.footer button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--animation-timing);
+}
+
+.footer button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.footer .links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.footer .links div {
+  margin: 10px 0;
+}
+
+.footer .links a {
+  text-decoration: none;
+  color: var(--secondary-color); /* Ensure consistent text color */
+  margin: 0 5px;
+}
+
+.footer .links a:hover {
+  color: var(--primary-color); /* Updated hover color */
+}
+
+.bottom-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--background-color);
+  text-align: center;
+  font-size: 14px;
+  color: var(--secondary-color); /* Ensure consistent text color */
+}
+
+/*************************************/
+/************ NEWSLETTER *************/
+/*************************************/
+.newsletter {
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.newsletter p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: var(--secondary-color); /* Ensure consistent text color */
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* Media Queries for Small devices (phones) */
+@media (max-width: 480px) {
+  /*************************************/
+  /*********** DONATION FORM ***********/
+  /*************************************/
+  .container{
+    padding: 0 2px !important;
+  }
+
+  .donation-form{
+    padding: 10px;
+    width: 100% !important;
+  }
+
+  .donate-now-heading {
+    font-size: 2rem; /* Adjusted font size for small screens */
+    margin-top: 70px; /* Increased top margin for small screens */
+  }
+
+  /*************************************/
+  /************ NEWSLETTER *************/
+  /*************************************/
+  .newsletter {
+    padding: 20px 5px;
+  }
+
+  .newsletter input {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .newsletter button {
+    padding: 8px 16px;
+  }
+
+  /*************************************/
+  /*************** FOOTER **************/
+  /*************************************/
+  .links{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footerLink{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .footerLink strong{
+    color: #333;
+  }
+}
+
+.dark-mode .sidebar .project-organizer strong,.dark-mode .donation-form textarea,.dark-mode .container h1,.dark-mode .donation-form input,.dark-mode .sidebar .card,.dark-mode .donation-form h3{
+  color:var(--text-color);
+}
+
+.dark-mode .donation-form,.dark-mode .sidebar .card{
+  background-color: var(--card-background);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .donation-form input,.dark-mode .donation-form textarea{
+  background-color: var(--input-background);
+}
+
+.dark-mode .donation-form input:hover,
+.dark-mode .donation-form textarea:hover {
+  background-color: var(--card-background);
+  box-shadow: 0 0 5px var(--input-hover-border); 
+}
+
+.dark-mode .sidebar .project-organizer p,.dark-mode .sidebar .card ul li strong,.dark-mode .sidebar .card ul li{
+  color:white;
+}
+.dark-mode .donate-now-heading{
+  color: var(--text-color);
+}
